@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEXOS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/nexos.css" />
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H7a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2 2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1M16 3h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2 2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-1"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v13"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2m3 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4z"/></symbol>
+  <symbol id="i-archive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="5" rx="1.5"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8M10 12h4"/></symbol>
+  <symbol id="i-restore" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="3"/><path d="M12 3v5M8 14h.01M16 14h.01"/></symbol>
+</svg>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">N</div>
+      <div>
+        <div class="brand-name">NEXOS</div>
+        <div class="brand-sub">agentes locais</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav-label">Navegacao</div>
+      <button class="nav-item active" data-view="chat"><svg><use href="#i-chat"/></svg> Chat</button>
+      <button class="nav-item" data-view="create"><svg><use href="#i-plus"/></svg> Criar agente</button>
+      <button class="nav-item" data-view="manage"><svg><use href="#i-grid"/></svg> Gerir agentes <span class="nav-count" id="navAgentCount">0</span></button>
+      <button class="nav-item" data-view="master"><svg><use href="#i-code"/></svg> Prompt mestre</button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-card">
+        <div class="status-row">
+          <span class="dot" id="dotOllama"></span> Ollama
+          <span class="status-value" id="statusModel">...</span>
+        </div>
+        <div class="status-row">
+          <span class="dot" id="dotEmbed"></span> Embeddings
+          <span class="status-value" id="statusEmbed">...</span>
+        </div>
+        <div class="status-row">
+          <span class="dot"></span> Base
+          <span class="status-value" id="statusBase">0 docs</span>
+        </div>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="btnRefreshStatus"><svg><use href="#i-refresh"/></svg> Atualizar status</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="header">
+      <h1 id="viewTitle">Chat</h1>
+      <span class="sub" id="viewSub">Converse com um agente e sua base de conhecimento</span>
+      <div class="header-actions" id="headerActions"></div>
+    </div>
+
+    <!-- ================================================================ CHAT -->
+    <section class="view no-pad hidden" id="view-chat">
+      <div class="chat">
+        <div class="chat-main">
+          <div class="chat-bar">
+            <select class="select" id="chatAgent"></select>
+            <span class="badge" id="chatAgentBadge">sem base</span>
+            <div style="margin-left:auto" class="flex gap-8">
+              <button class="btn btn-secondary btn-sm" id="btnNewConv"><svg><use href="#i-plus"/></svg> Nova conversa</button>
+            </div>
+          </div>
+          <div class="chat-scroll" id="chatScroll">
+            <div class="chat-inner" id="chatMessages"></div>
+          </div>
+          <div class="composer">
+            <div class="composer-inner">
+              <div class="composer-box">
+                <textarea id="composerInput" rows="1" placeholder="Pergunte algo ao agente..."></textarea>
+                <button class="btn btn-primary" id="btnSend"><svg><use href="#i-send"/></svg> Enviar</button>
+              </div>
+              <div class="composer-hint">
+                <span>Enter envia &middot; Shift+Enter quebra linha</span>
+                <span id="composerStatus"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="chat-side">
+          <header>Conversas <button class="btn btn-ghost btn-icon btn-sm" id="btnNewConv2"><svg><use href="#i-plus"/></svg></button></header>
+          <div class="conv-list" id="convList"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================== CRIAR -->
+    <section class="view hidden" id="view-create">
+      <div class="container">
+        <div class="card">
+          <h2 class="card-title">Identidade do agente</h2>
+          <p class="card-sub">Estes campos entram no prompt do agente junto com o prompt mestre.</p>
+
+          <div class="field">
+            <label for="cName">Nome</label>
+            <input class="input" id="cName" placeholder="Ex.: Analista Regulatorio" maxlength="120" />
+          </div>
+
+          <div class="field">
+            <label for="cPurpose">Proposito</label>
+            <textarea class="textarea" id="cPurpose" placeholder="O que este agente faz, para quem responde e qual o escopo dele."></textarea>
+            <span class="hint">Uma frase clara de missao. Vai para a variavel <span class="mono">{{agent_purpose}}</span>.</span>
+          </div>
+
+          <div class="field">
+            <label for="cObs">Observacoes</label>
+            <textarea class="textarea" id="cObs" placeholder="Regras de tom, formato preferido, o que evitar, vocabulario da area..."></textarea>
+            <span class="hint">Instrucoes complementares. Vai para <span class="mono">{{agent_observations}}</span>.</span>
+          </div>
+
+          <details>
+            <summary class="small muted" style="cursor:pointer;margin-bottom:14px">Ajustes avancados</summary>
+            <div class="row">
+              <div class="field">
+                <label for="cModel">Modelo</label>
+                <select class="select" id="cModel"></select>
+              </div>
+              <div class="field">
+                <label for="cTemp">Temperatura</label>
+                <input class="input" id="cTemp" type="number" min="0" max="2" step="0.1" value="0.3" />
+              </div>
+              <div class="field">
+                <label for="cTopK">Trechos por resposta</label>
+                <input class="input" id="cTopK" type="number" min="0" max="20" step="1" value="5" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="switch">
+                <input type="checkbox" id="cUseMaster" checked /><span class="track"></span>
+                <span>Usar o prompt mestre global</span>
+              </label>
+              <span class="hint">Desligue apenas se este agente precisar de uma politica totalmente propria.</span>
+            </div>
+            <div class="field">
+              <label for="cOverride">Instrucoes exclusivas (opcional)</label>
+              <textarea class="textarea mono" id="cOverride" placeholder="Texto adicionado ao prompt deste agente. Se o mestre estiver desligado, substitui o mestre."></textarea>
+            </div>
+          </details>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">Base de conhecimento</h2>
+          <p class="card-sub">PDF, DOCX, PPTX, TXT, MD, CSV e imagens (via OCR). Ate 60 MB por arquivo.</p>
+          <div class="dropzone" id="cDrop">
+            <div class="icon"><svg><use href="#i-upload"/></svg></div>
+            <strong>Arraste arquivos aqui</strong>
+            <p>ou clique para escolher</p>
+            <input type="file" id="cFiles" multiple class="hidden" accept=".pdf,.docx,.pptx,.txt,.md,.csv,.json,.png,.jpg,.jpeg,.webp,.bmp,.tiff" />
+          </div>
+          <div class="file-list" id="cFileList"></div>
+        </div>
+
+        <div class="flex gap-8" style="justify-content:flex-end;margin:18px 0 40px">
+          <button class="btn btn-ghost" id="btnResetCreate">Limpar</button>
+          <button class="btn btn-primary" id="btnCreateAgent"><svg><use href="#i-plus"/></svg> Criar agente</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= GERIR -->
+    <section class="view hidden" id="view-manage">
+      <div class="container-wide">
+        <div class="flex between center" style="margin-bottom:18px">
+          <div class="filter-tabs" id="agentFilter">
+            <button class="active" data-filter="active">Ativos</button>
+            <button data-filter="archived">Arquivados</button>
+            <button data-filter="all">Todos</button>
+          </div>
+          <input class="input" id="agentSearch" placeholder="Buscar agente..." style="max-width:260px" />
+        </div>
+        <div class="agent-grid" id="agentGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ MESTRE -->
+    <section class="view hidden" id="view-master">
+      <div class="container">
+        <div class="callout">
+          <strong>Arquitetura hibrida.</strong> O prompt mestre vale para todos os agentes: define idioma,
+          tom, como usar a base de conhecimento e o formato da resposta. Cada agente acrescenta a sua
+          identidade (nome, proposito, observacoes). Em cada pergunta o sistema monta
+          <span class="mono">mestre + agente + trechos recuperados</span>.
+        </div>
+
+        <div class="card mt-16">
+          <div class="flex between center" style="margin-bottom:14px">
+            <div>
+              <h2 class="card-title">Prompt mestre</h2>
+              <p class="card-sub mb-0">Use as variaveis abaixo; elas sao trocadas pelos dados do agente.</p>
+            </div>
+            <span class="badge badge-primary" id="masterState">salvo</span>
+          </div>
+
+          <div class="flex gap-8 wrap" style="margin-bottom:12px">
+            <span class="var-chip" data-var="{{agent_name}}">{{agent_name}}</span>
+            <span class="var-chip" data-var="{{agent_purpose}}">{{agent_purpose}}</span>
+            <span class="var-chip" data-var="{{agent_observations}}">{{agent_observations}}</span>
+          </div>
+
+          <textarea class="textarea mono" id="masterPrompt" style="min-height:380px"></textarea>
+
+          <div class="flex gap-8" style="justify-content:flex-end;margin-top:14px">
+            <button class="btn btn-ghost" id="btnMasterReset"><svg><use href="#i-restore"/></svg> Restaurar padrao</button>
+            <button class="btn btn-secondary" id="btnMasterPreview"><svg><use href="#i-eye"/></svg> Pre-visualizar</button>
+            <button class="btn btn-primary" id="btnMasterSave"><svg><use href="#i-save"/></svg> Salvar</button>
+          </div>
+        </div>
+
+        <div class="card hidden" id="masterPreviewCard">
+          <div class="flex between center" style="margin-bottom:12px">
+            <h2 class="card-title mb-0">Prompt final enviado ao modelo</h2>
+            <select class="select" id="previewAgent" style="max-width:240px"></select>
+          </div>
+          <div class="preview-box" id="masterPreviewText"></div>
+        </div>
+
+        <div class="card" style="margin-bottom:40px">
+          <h2 class="card-title">Como decidir</h2>
+          <p class="card-sub">Referencia rapida para quando mexer em cada camada.</p>
+          <div class="callout"><strong>Va no mestre</strong> quando a regra vale para todos: idioma, obrigacao de citar fontes, o que fazer sem contexto, formato padrao, limites eticos.</div>
+          <div class="callout"><strong>Va no agente</strong> quando a regra e do dominio: vocabulario tecnico, publico-alvo, estrutura especifica de resposta, prioridades daquele acervo.</div>
+          <div class="callout"><strong>Desligue o mestre</strong> so em casos raros - por exemplo, um agente que responde em outro idioma ou devolve apenas JSON.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ====================================================== PRIMEIRA EXECUCAO -->
+<div class="setup-overlay hidden" id="setupOverlay">
+  <div class="setup-card">
+    <div class="setup-head">
+      <div class="brand-mark">N</div>
+      <div>
+        <h2>Bem-vindo ao NEXOS</h2>
+        <p class="muted small mb-0">Dois passos rapidos e o app esta pronto. Tudo roda na sua maquina.</p>
+      </div>
+    </div>
+
+    <div class="step" id="stepOllama">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="flex between center">
+          <h3>Instalar o Ollama</h3>
+          <span class="badge" id="badgeOllama">verificando...</span>
+        </div>
+        <p class="muted small">O Ollama e o motor que executa o modelo de IA localmente. Baixe pelo site oficial:</p>
+        <div class="url-box">
+          <span class="mono" id="ollamaUrlText">https://ollama.com/download</span>
+          <button class="btn btn-sm btn-ghost" data-copy="https://ollama.com/download">Copiar</button>
+        </div>
+        <div class="flex gap-8 mt-16 wrap">
+          <button class="btn btn-primary" id="btnOpenOllama"><svg><use href="#i-upload"/></svg> Abrir site oficial do Ollama</button>
+          <button class="btn btn-secondary" id="btnRecheck"><svg><use href="#i-refresh"/></svg> Ja instalei, verificar</button>
+        </div>
+        <p class="subtle small" style="margin:12px 0 0">Depois de instalar, o Ollama inicia sozinho e fica na bandeja do Windows.</p>
+      </div>
+    </div>
+
+    <div class="step" id="stepModel">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="flex between center">
+          <h3>Baixar o modelo <span class="mono" id="requiredModel">qwen2.5:3b</span></h3>
+          <span class="badge" id="badgeModel">aguardando</span>
+        </div>
+        <p class="muted small">Cerca de 1,9 GB, baixado uma unica vez direto dos servidores oficiais do Ollama.</p>
+        <button class="btn btn-primary" id="btnPullModel"><svg><use href="#i-upload"/></svg> Baixar modelo agora</button>
+        <div class="progress hidden" id="pullProgress">
+          <div class="progress-track"><div class="progress-bar" id="pullBar"></div></div>
+          <div class="flex between small subtle" style="margin-top:6px">
+            <span id="pullStatus">preparando...</span>
+            <span id="pullPercent"></span>
+          </div>
+        </div>
+        <div class="section-divider"></div>
+        <p class="subtle small" style="margin:0 0 8px">Prefere pelo terminal? Rode o comando abaixo e clique em verificar:</p>
+        <div class="url-box">
+          <span class="mono" id="pullCommand">ollama pull qwen2.5:3b</span>
+          <button class="btn btn-sm btn-ghost" data-copy="ollama pull qwen2.5:3b">Copiar</button>
+        </div>
+        <p class="subtle small" style="margin:12px 0 0">Pagina oficial do modelo:
+          <a href="#" id="linkModelPage">ollama.com/library/qwen2.5</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="setup-foot">
+      <button class="btn btn-ghost" id="btnSkipSetup">Continuar sem configurar</button>
+      <button class="btn btn-primary" id="btnFinishSetup" disabled>Comecar a usar</button>
+    </div>
+  </div>
+</div>
+
+<div id="modalHost"></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* Copia isolada dos tokens - referencia rapida ao criar novos componentes. */
+:root {
+  --bg: #0f1012;
+  --bg-elevated: #131417;
+  --card: #17181b;
+  --muted: #1d1f23;
+  --border: #2a2c31;
+  --border-strong: #3a3d44;
+  --fg: #f5f6f8;
+  --fg-muted: #9aa0ab;
+  --fg-subtle: #6b7280;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --primary-soft: rgba(59, 130, 246, 0.12);
+  --success: #00c758;
+  --warning: #f99c00;
+  --danger: #f4444d;
+  --radius: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-full: 999px;
+  --font-sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+}
