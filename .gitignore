@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Ambiente local
+.env
+
+# Dados do app (banco, uploads, logs)
+data/nexos.db
+data/nexos.db-*
+data/nexos.log
+data/uploads/*
+!data/uploads/.gitkeep
+
+# Build do executavel
+build/
+dist/
+*.manifest
+
+# Sistema
+.DS_Store
+Thumbs.db
