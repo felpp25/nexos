@@ -152,6 +152,14 @@ Documentação interativa em `http://127.0.0.1:8770/api/docs`.
 | GET DELETE | `/api/conversations/{id}` · `/messages` |
 | GET PUT POST | `/api/master-prompt` · `/reset` · `/preview` |
 
+## Requisitos do cliente (Windows)
+
+- Windows 10/11 64-bit
+- **Microsoft Edge WebView2** — ja incluso no Windows 11 e no Windows 10 atualizado;
+  se faltar, o [instalador oficial da Microsoft](https://developer.microsoft.com/microsoft-edge/webview2/) resolve
+- Ollama instalado ([site oficial](https://ollama.com/download)) com o modelo `qwen2.5:3b`
+- ~3 GB livres (modelo + app) e 8 GB de RAM recomendados
+
 ## Privacidade
 
 Nada sai da máquina. As únicas conexões externas são o download do Ollama e do

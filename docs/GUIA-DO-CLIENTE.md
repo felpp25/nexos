@@ -157,6 +157,14 @@ Não impede o uso — é a busca simples. Para busca semântica melhor, rode
 `ollama pull nomic-embed-text`, clique em **Atualizar status** e reenvie os
 documentos.
 
+**Abri o NEXOS e a janela não aparece / aparece em branco.**
+O app usa o **Microsoft Edge WebView2**, que já vem no Windows 11 e no Windows 10
+atualizado. Se estiver faltando, instale o "Evergreen Standalone Installer" pelo
+site oficial da Microsoft:
+https://developer.microsoft.com/microsoft-edge/webview2/
+Depois abra o NEXOS de novo. Detalhes de erro ficam em
+`C:\Users\<seu usuário>\AppData\Local\NEXOS\nexos.log`.
+
 **O antivírus reclamou do arquivo.**
 Programas empacotados dessa forma (PyInstaller) às vezes geram alerta falso. O
 código-fonte completo está em https://github.com/felpp25/nexos.
