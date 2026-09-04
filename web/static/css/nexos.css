@@ -321,9 +321,14 @@ button, input, textarea, select { font: inherit; color: inherit; }
 /* indicador de "pensando": atomo com as orbitas girando ao lado do nome.
    A rotacao vem de <animateTransform> dentro do SVG (ver atomSvg() no app.js);
    aqui ficam so tamanho, cor e o texto pulsante. */
-.thinking { display: inline-flex; align-items: center; gap: 7px; color: #7fb0ff; }
-.thinking .atom { width: 19px; height: 19px; flex: none; }
-.thinking .label { font-size: 0.75rem; animation: fade-pulse 1.6s ease-in-out infinite; }
+.thinking { display: inline-flex; align-items: center; gap: 8px; color: #7fb0ff; }
+.thinking .atom {
+  width: 28px; height: 28px; flex: none;
+  filter: drop-shadow(0 0 4px rgba(59, 130, 246, 0.45));
+}
+.thinking .label { font-size: 0.8125rem; animation: fade-pulse 1.6s ease-in-out infinite; }
+/* so a linha que tem o indicador cresce - as demais mensagens ficam compactas */
+.msg .who:has(.thinking) { min-height: 30px; }
 
 @keyframes fade-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
 .bubble {

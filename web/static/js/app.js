@@ -29,26 +29,40 @@ const icon = (name, cls = '') => `<svg class="${cls}"><use href="#i-${name}"/></
 // A rotacao usa <animateTransform> do proprio SVG, e nao CSS: assim o centro de
 // giro ("0 0", o nucleo) e explicito, sem depender de como o navegador resolve
 // transform-origin/transform-box dentro de SVG.
+// dir: 1 gira no sentido horario, -1 no anti-horario (orbitas cruzando em
+// direcoes diferentes dao a sensacao de volume, como um atomo de verdade)
 const ORBITS = [
-  { from: 0, dur: '2.6s', opacity: 0.8, r: 1.7 },
-  { from: 60, dur: '3.6s', opacity: 0.6, r: 1.5 },
-  { from: 120, dur: '4.6s', opacity: 0.45, r: 1.3 },
+  { from: 0, dur: 2.2, dir: 1, opacity: 0.85, r: 1.9 },
+  { from: 60, dur: 3.0, dir: -1, opacity: 0.65, r: 1.6 },
+  { from: 120, dur: 3.8, dir: 1, opacity: 0.5, r: 1.4 },
 ];
 
 function atomSvg() {
-  const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const orbits = ORBITS.map((o) => `
+  // O indicador comunica um estado (o app esta trabalhando), entao o giro roda
+  // sempre - inclusive com "animacoes desligadas" no Windows, onde o app ficaria
+  // parecendo travado. Com prefers-reduced-motion cortamos so o movimento
+  // acessorio: a pulsacao do nucleo e o piscar do rotulo.
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const orbits = ORBITS.map((o) => {
+    const to = o.from + 360 * o.dir;
+    return `
       <g transform="rotate(${o.from})">
-        <ellipse rx="10" ry="3.9" stroke-width="1.2" opacity="${o.opacity}"/>
+        <ellipse rx="10" ry="3.9" stroke-width="1.15" opacity="${o.opacity}"/>
         <circle cx="10" cy="0" r="${o.r}" fill="currentColor" stroke="none"/>
-        ${still ? '' : `<animateTransform attributeName="transform" type="rotate"
-          from="${o.from} 0 0" to="${o.from + 360} 0 0" dur="${o.dur}" repeatCount="indefinite"/>`}
-      </g>`).join('');
-  const core = still
-    ? '<circle r="2.6" fill="currentColor" stroke="none"/>'
-    : `<circle r="2.6" fill="currentColor" stroke="none">
-         <animate attributeName="opacity" values="1;0.45;1" dur="1.8s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="rotate"
+          from="${o.from} 0 0" to="${to} 0 0"
+          dur="${o.dur}s" repeatCount="indefinite"/>
+      </g>`;
+  }).join('');
+
+  const core = reduced
+    ? '<circle r="2.8" fill="currentColor" stroke="none"/>'
+    : `<circle r="2.8" fill="currentColor" stroke="none">
+         <animate attributeName="r" values="2.8;2.2;2.8" dur="1.8s" repeatCount="indefinite"/>
+         <animate attributeName="opacity" values="1;0.55;1" dur="1.8s" repeatCount="indefinite"/>
        </circle>`;
+
   return `<svg class="atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
       <g transform="translate(12 12)">${orbits}${core}</g>
     </svg>`;
