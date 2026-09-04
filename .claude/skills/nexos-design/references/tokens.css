@@ -11,7 +11,7 @@
   --fg-subtle: #6b7280;
   --primary: #3b82f6;
   --primary-hover: #2563eb;
-  --primary-soft: rgba(59, 130, 246, 0.12);
+  --primary-soft: hsla(217, 91%, 60%, 0.12);
   --success: #00c758;
   --warning: #f99c00;
   --danger: #f4444d;

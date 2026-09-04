@@ -79,6 +79,11 @@ Sombra permitida: `0 1px 2px rgba(0,0,0,.4)` em cards flutuantes e
   semantica, some em 4s.
 - **Estado vazio**: icone circular 48px em `--muted`, titulo serif, uma linha de
   apoio em `--fg-muted` e um botao primario de acao.
+- **Indicador de trabalho**: atomo de 19px com tres orbitas girando + rotulo curto
+  (`consultando a base` -> `pensando` -> `escrevendo`), em `#7fb0ff`, ao lado do nome
+  do agente. A rotacao usa `<animateTransform>` dentro do SVG com centro explicito
+  (`from="A 0 0"`), nunca `transform-origin` do CSS - em SVG isso resolve diferente
+  entre navegadores e desloca o eixo de giro. Ver `atomSvg()` em `web/static/js/app.js`.
 
 ## 5. Movimento
 
@@ -89,7 +94,9 @@ Herdado do site de referencia - discreto e curto.
 - `border-spin`: gradiente conico girando na borda de um card em destaque.
 - `float-3d`: flutuacao vertical de 6px, 6s, so em elementos decorativos.
 - Streaming de texto usa cursor `▍` piscando, nunca spinner no meio da resposta.
-- Respeite `prefers-reduced-motion: reduce` desligando animacoes.
+- Respeite `prefers-reduced-motion: reduce` desligando animacoes. Animacao SMIL
+  (dentro de SVG) nao e afetada pela regra CSS: verifique com
+  `matchMedia('(prefers-reduced-motion: reduce)')` e emita a versao estatica.
 
 ## 6. Layout
 
