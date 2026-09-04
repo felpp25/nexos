@@ -103,6 +103,10 @@ Escolha o agente no topo e pergunte. A resposta aparece sendo escrita, e:
   trecho e abrir o arquivo original;
 - a etiqueta verde ao lado do nome mostra quantos documentos aquele agente tem.
 
+Enquanto ele trabalha, um **átomo girando** aparece ao lado do nome do agente:
+*consultando a base* → *pensando* → *escrevendo*. Ele some quando a resposta termina —
+serve para você saber que o app está processando, e não travado.
+
 Se a resposta não estiver na base, o agente **avisa** antes de completar com
 conhecimento geral. Cada conversa fica salva na coluna da direita.
 

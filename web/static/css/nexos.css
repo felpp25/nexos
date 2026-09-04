@@ -313,7 +313,19 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .file-row svg, .conv-item svg, .badge svg { width: 14px; height: 14px; }
 .msg.assistant .avatar { background: var(--primary-soft); border-color: rgba(59, 130, 246, 0.35); color: #7fb0ff; }
 .msg .body { min-width: 0; flex: 1; }
-.msg .who { font-size: 0.75rem; color: var(--fg-subtle); margin-bottom: 5px; letter-spacing: 0.02em; }
+.msg .who {
+  font-size: 0.75rem; color: var(--fg-subtle); margin-bottom: 5px; letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 8px; min-height: 18px;
+}
+
+/* indicador de "pensando": atomo com as orbitas girando ao lado do nome.
+   A rotacao vem de <animateTransform> dentro do SVG (ver atomSvg() no app.js);
+   aqui ficam so tamanho, cor e o texto pulsante. */
+.thinking { display: inline-flex; align-items: center; gap: 7px; color: #7fb0ff; }
+.thinking .atom { width: 19px; height: 19px; flex: none; }
+.thinking .label { font-size: 0.75rem; animation: fade-pulse 1.6s ease-in-out infinite; }
+
+@keyframes fade-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
 .bubble {
   background: var(--card);
   border: 1px solid var(--border);
