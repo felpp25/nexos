@@ -282,8 +282,17 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .empty p { margin: 0 auto 16px; max-width: 380px; font-size: 0.875rem; }
 
 /* -------------------------------------------------------------------- chat */
-.chat { display: grid; grid-template-columns: 1fr 268px; height: 100%; min-height: 0; }
-.chat-main { display: flex; flex-direction: column; min-width: 0; }
+/* grid-template-rows: minmax(0, 1fr) impede que a linha cresca com o conteudo -
+   sem isso a conversa empurra o compositor para fora e nada rola. */
+.chat {
+  display: grid;
+  grid-template-columns: 1fr 268px;
+  grid-template-rows: minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+.chat-main { display: flex; flex-direction: column; min-width: 0; min-height: 0; overflow: hidden; }
 .chat-bar {
   display: flex; align-items: center; gap: 10px;
   padding: 12px 22px;
